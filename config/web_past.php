@@ -7,8 +7,6 @@ $config = [
     'id' => 'basic',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
-    'timeZone' => getenv('timezone') ?: 'America/Mexico_City',
-    'name' => getenv('name') ?: 'My Application',
     'aliases' => [
         '@bower' => '@vendor/bower-asset',
         '@npm'   => '@vendor/npm-asset',
@@ -16,7 +14,7 @@ $config = [
     'components' => [
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
-            'cookieValidationKey' => '{{cookie_validation}}',
+            'cookieValidationKey' => '',
         ],
         'cache' => [
             'class' => 'yii\caching\FileCache',
@@ -43,41 +41,13 @@ $config = [
                 ],
             ],
         ],
-        'view' => [
-          'class' => 'yii\web\View',
-          'renderers' => [
-            'tpl' => [
-              'class' => 'yii\smarty\ViewRenderer',
-            ],
-          ],
-        ],
         'db' => $db,
-        'authManager' => [
-          'class' => 'yii\rbac\DbManager',
-        ],
+        /*
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
             ],
-        ],
-        /*
-        'mutex' => [
-          'class' => \yii\mutex\MysqlMutex::class,
-          'db' => 'db',
-        ],
-        'queue' => [
-          'class' => yii\queue\db\Queue::class,
-          'serializer' => \yii\queue\serializers\JsonSerializer::class,
-          'db' => 'db',
-          'tableName' => '{{%queue}}',
-          'channel' => 'default',
-          'ttr' => 300,
-          'attempts' => 3,
-          'mutex' => [
-            'class' => \yii\mutex\MysqlMutex::class,
-            'db' => 'db',
-          ],
         ],
         */
     ],

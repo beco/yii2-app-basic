@@ -7,6 +7,8 @@ $config = [
     'id' => 'basic-console',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
+    'timeZone' => getenv('timezone') ?: 'America/Mexico_City',
+    'name' => getenv('name') ?: 'My Application',
     'controllerNamespace' => 'app\commands',
     'aliases' => [
         '@bower' => '@vendor/bower-asset',
@@ -26,6 +28,28 @@ $config = [
             ],
         ],
         'db' => $db,
+        'authManager' => [
+          'class' => 'yii\rbac\DbManager',
+        ],
+        /*
+        'mutex' => [
+          'class' => \yii\mutex\MysqlMutex::class,
+          'db' => 'db',
+        ],
+        'queue' => [
+          'class' => yii\queue\db\Queue::class,
+          'serializer' => \yii\queue\serializers\JsonSerializer::class,
+          'db' => 'db',
+          'tableName' => '{{%queue}}',
+          'channel' => 'default',
+          'ttr' => 300,
+          'attempts' => 3,
+          'mutex' => [
+            'class' => \yii\mutex\MysqlMutex::class,
+            'db' => 'db',
+          ],
+        ],
+        */
     ],
     'params' => $params,
     /*
