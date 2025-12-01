@@ -1,6 +1,6 @@
 <?php
 
-namespace beco\yii\migrations;
+namespace app\migrations;
 
 use yii\db\Migration;
 
