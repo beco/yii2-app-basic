@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+# ./yii migrate --migrationPath=@yii/rbac/migrations --interactive=0
+# ./yii migrate --migrationPath=@yii/queue/db/migrations --interactive=0
+./yii migrate/up --interactive=0
+./yii rbac/init
+./yii system/init
+# ./yii scheduler/beat
